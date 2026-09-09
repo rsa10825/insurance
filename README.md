@@ -28,11 +28,10 @@ npm run build    # static output to ./dist
 npm run preview  # serve the production build
 ```
 
-## Contact form
+## Contact
 
-The form on `/contact` posts to [Formspree](https://formspree.io). Create a free
-form there (or at [Web3Forms](https://web3forms.com)) and replace `FORMSPREE_ID`
-near the top of [`src/pages/contact.astro`](src/pages/contact.astro).
+No form — the site drives everyone to email **shawn@investlifetoday.com**
+(`mailto:` links on the CTA band and the `/contact` page).
 
 ## Images
 
@@ -45,10 +44,34 @@ All imagery lives in [`public/images/`](public/images/) as compressed AVIF:
 | `shawn-absher-portrait.avif`  | About hero                     |
 | `shawn-absher-office.avif`    | About sidebar, Contact card    |
 
-## Deploy
+## Deploy — Cloudflare Pages
 
-Static output — deploy `dist/` to Netlify, Vercel, Cloudflare Pages, or any static
-host. Set the site's custom domain to `investlifetoday.com`.
+Static output. [`wrangler.jsonc`](wrangler.jsonc) sets `pages_build_output_dir` to
+`./dist`, and [`public/_headers`](public/_headers) adds caching + security headers.
+
+**Option A — Git integration (recommended):**
+Cloudflare dashboard → Workers & Pages → Create → Pages → connect
+`github.com/rsa10825/insurance`, then:
+
+| Setting              | Value           |
+| -------------------- | --------------- |
+| Build command        | `npm run build` |
+| Build output directory | `dist`        |
+| Framework preset     | Astro           |
+
+Every push to `main` deploys automatically.
+
+**Option B — CLI:**
+
+```bash
+npm run deploy        # astro build + wrangler pages deploy ./dist
+```
+
+(`npx wrangler login` once first. Wrangler is not a project dependency — it runs
+via `npx` to keep `npm audit` clean.)
+
+**Custom domain:** in the Pages project → Custom domains → add
+`investlifetoday.com` (and `www`). Cloudflare provisions the certificate.
 
 ## Disclaimer
 

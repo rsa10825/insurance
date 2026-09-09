@@ -2,15 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import { products } from '../data/products';
 
-// To make this form deliver email, create a free endpoint at https://formspree.io
-// (or https://web3forms.com) and replace the ID below.
-const FORMSPREE_ID = 'your-form-id';
-const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
+const email = 'shawn@investlifetoday.com';
 ---
 
 <Layout
   title="Contact Shawn Absher — Free Colonial Life Benefits Review"
-  description="Reach Shawn Absher for a free, no-pressure Colonial Life benefits review. Email shawn@investlifetoday.com or send a message and hear back within 24 hours."
+  description="Reach Shawn Absher directly for a free, no-pressure Colonial Life benefits review. Email shawn@investlifetoday.com and hear back within 24 hours."
 >
   <section class="bg-navy-950">
     <div class="container-x py-16 lg:py-20">
@@ -19,91 +16,60 @@ const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
         Let's find the gaps in your coverage
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-navy-200">
-        Send a note below or email Shawn directly. Every review is free, and there
-        is never any pressure to buy.
+        Email Shawn directly. Every review is free, and there is never any pressure
+        to buy.
       </p>
     </div>
   </section>
 
   <section class="container-x py-16">
     <div class="grid gap-12 lg:grid-cols-[1fr_0.8fr]">
-      <!-- Form -->
+      <!-- Primary: email -->
       <div>
-        <form
-          action={formAction}
-          method="POST"
-          class="grid gap-5 rounded-2xl border border-navy-100 bg-white p-6 sm:p-8"
-        >
-          <div class="grid gap-5 sm:grid-cols-2">
-            <label class="block">
-              <span class="text-sm font-medium text-navy-800">Name</span>
-              <input
-                type="text"
-                name="name"
-                required
-                autocomplete="name"
-                class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
-              />
-            </label>
-            <label class="block">
-              <span class="text-sm font-medium text-navy-800">Email</span>
-              <input
-                type="email"
-                name="email"
-                required
-                autocomplete="email"
-                class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
-              />
-            </label>
-          </div>
-
-          <label class="block">
-            <span class="text-sm font-medium text-navy-800">Phone <span class="text-navy-400">(optional)</span></span>
-            <input
-              type="tel"
-              name="phone"
-              autocomplete="tel"
-              class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
-            />
-          </label>
-
-          <label class="block">
-            <span class="text-sm font-medium text-navy-800">What are you most interested in?</span>
-            <select
-              name="interest"
-              class="mt-1.5 w-full rounded-md border border-navy-200 bg-white px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
-            >
-              <option value="">Not sure yet — help me figure it out</option>
-              {products.map((p) => <option value={p.name}>{p.name}</option>)}
-              <option value="Small business benefits">Small business benefits</option>
-            </select>
-          </label>
-
-          <label class="block">
-            <span class="text-sm font-medium text-navy-800">Message</span>
-            <textarea
-              name="message"
-              rows="5"
-              required
-              class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
-              placeholder="Tell Shawn a little about your situation and the best time to reach you."
-            ></textarea>
-          </label>
-
-          <input type="hidden" name="_subject" value="New benefits review request — investlifetoday.com" />
-          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-          <button
-            type="submit"
-            class="justify-self-start rounded-md bg-navy-800 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
-          >
-            Send to Shawn
-          </button>
-          <p class="text-xs text-navy-400">
-            By sending this you agree to be contacted about insurance options. Your
-            information is never sold.
+        <div class="rounded-2xl border border-navy-100 bg-navy-50 p-8 sm:p-10">
+          <h2 class="font-serif text-2xl font-semibold text-navy-900">Email Shawn</h2>
+          <p class="mt-3 text-navy-600">
+            Send a few lines about your situation — your job, your family, the
+            coverage you already have — and the best time to reach you. Shawn
+            replies personally, usually within a day.
           </p>
-        </form>
+
+          <a
+            href={`mailto:${email}?subject=${encodeURIComponent('Benefits review request')}`}
+            class="mt-6 inline-flex items-center gap-2 rounded-md bg-navy-800 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
+            {email}
+          </a>
+
+          <p class="mt-4 text-sm text-navy-500">
+            Prefer to write it yourself? Copy the address above into any email app.
+          </p>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-navy-100 p-6 sm:p-8">
+          <h3 class="text-sm font-semibold uppercase tracking-wide text-navy-500">
+            Helpful to mention
+          </h3>
+          <ul class="mt-4 grid gap-2 sm:grid-cols-2">
+            {
+              products.map((p) => (
+                <li class="flex gap-2 text-sm text-navy-700">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+                  {p.name.replace(' Insurance', '')}
+                </li>
+              ))
+            }
+            <li class="flex gap-2 text-sm text-navy-700">
+              <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+              Small business benefits
+            </li>
+            <li class="flex gap-2 text-sm text-navy-700">
+              <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+              Not sure yet — that's fine
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Direct details -->
@@ -115,7 +81,7 @@ const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
               <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
               <div>
                 <p class="font-medium text-navy-900">Email</p>
-                <a href="mailto:shawn@investlifetoday.com" class="text-navy-600 hover:text-navy-800">shawn@investlifetoday.com</a>
+                <a href={`mailto:${email}`} class="text-navy-600 hover:text-navy-800">{email}</a>
               </div>
             </li>
             <li class="flex gap-3">
