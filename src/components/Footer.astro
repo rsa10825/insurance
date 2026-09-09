@@ -1,0 +1,73 @@
+---
+import { products } from '../data/products';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-navy-100 bg-navy-950 text-navy-100">
+  <div class="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-1">
+      <div class="flex items-center gap-2.5 font-serif text-lg font-semibold text-white">
+        <span class="grid h-9 w-9 place-items-center rounded-md bg-white/10">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l8 4v5c0 4.4-3.1 7.6-8 9-4.9-1.4-8-4.6-8-9V7z" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+        </span>
+        Shawn Absher Insurance
+      </div>
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-navy-200">
+        Independent Colonial Life benefits counselor helping families and small
+        businesses in Las Vegas and nationwide protect what matters most.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-navy-300">Coverage</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          products.map((p) => (
+            <li>
+              <a href={`/coverage#${p.slug}`} class="text-navy-100 transition-colors hover:text-white">
+                {p.name.replace(' Insurance', '')}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-navy-300">Company</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href="/about" class="transition-colors hover:text-white">About Shawn</a></li>
+        <li><a href="/coverage" class="transition-colors hover:text-white">All Coverage</a></li>
+        <li><a href="/contact" class="transition-colors hover:text-white">Contact</a></li>
+        <li><a href="https://www.coloniallife.com/" target="_blank" rel="noopener" class="transition-colors hover:text-white">Colonial Life</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-navy-300">Get in touch</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li>
+          <a href="mailto:shawn@investlifetoday.com" class="transition-colors hover:text-white">
+            shawn@investlifetoday.com
+          </a>
+        </li>
+        <li>Las Vegas, Nevada</li>
+        <li>By appointment — response within 24 hours</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-x flex flex-col gap-2 py-6 text-xs text-navy-300 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; {year} Shawn Absher Insurance. All rights reserved.</p>
+      <p class="max-w-2xl">
+        Shawn Absher is an independent agent authorized to offer Colonial Life &amp;
+        Accident Insurance Company products. This site is for informational purposes
+        and is not a contract. Product availability, benefits, and terms vary by state.
+      </p>
+    </div>
+  </div>
+</footer>

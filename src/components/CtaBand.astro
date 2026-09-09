@@ -1,0 +1,35 @@
+---
+interface Props {
+  heading?: string;
+  body?: string;
+}
+const {
+  heading = 'Not sure which coverage you need?',
+  body = 'That is exactly what Shawn is for. Book a free 20-minute review and get a clear, no-pressure recommendation built around your family and budget.',
+} = Astro.props;
+---
+
+<section class="container-x">
+  <div class="relative overflow-hidden rounded-2xl bg-navy-900 px-6 py-12 text-center sm:px-12 sm:py-16">
+    <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-navy-700/50"></div>
+    <div class="pointer-events-none absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-navy-800"></div>
+    <div class="relative mx-auto max-w-2xl">
+      <h2 class="font-serif text-2xl font-semibold text-white sm:text-3xl">{heading}</h2>
+      <p class="mt-4 text-navy-200">{body}</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href="/contact"
+          class="w-full rounded-md bg-gold-400 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-500 sm:w-auto"
+        >
+          Book a Free Review
+        </a>
+        <a
+          href="mailto:shawn@investlifetoday.com"
+          class="w-full rounded-md border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
+        >
+          Email Shawn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const values = [
+  {
+    title: 'Independent by design',
+    body: 'Shawn is an independent agent. His recommendations answer to your needs and budget — not a quota.',
+  },
+  {
+    title: 'Education first',
+    body: 'You will never be asked to sign something you do not understand. Every policy is explained until it makes sense.',
+  },
+  {
+    title: 'Here for the claim',
+    body: 'The real test of an agent is claim time. Shawn stays in your corner to help benefits get paid.',
+  },
+];
+---
+
+<Layout
+  title="About Shawn Absher — Your Colonial Life Insurance Expert"
+  description="Meet Shawn Absher: 28 years in Las Vegas business, now an independent Colonial Life benefits counselor helping families and small businesses protect their income and health."
+>
+  <section class="bg-navy-950">
+    <div class="container-x grid items-center gap-12 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
+      <div>
+        <p class="text-xs font-medium uppercase tracking-wide text-navy-300">About</p>
+        <h1 class="mt-4 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
+          Shawn Absher
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-navy-200">
+          For nearly three decades, Shawn Absher has built and run businesses in
+          Las Vegas — earning a reputation for straight talk, follow-through, and
+          treating clients like neighbors. Today he brings that same standard to
+          insurance as an independent Colonial Life benefits counselor.
+        </p>
+      </div>
+      <div class="relative mx-auto w-full max-w-sm">
+        <div class="absolute -inset-4 rounded-3xl bg-gold-400/10 blur-2xl"></div>
+        <img
+          src="/images/shawn-absher-portrait.avif"
+          alt="Shawn Absher"
+          width="488"
+          height="700"
+          class="relative w-full rounded-3xl border border-white/10 object-cover shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x py-20">
+    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="space-y-5 text-lg leading-relaxed text-navy-600">
+        <h2 class="font-serif text-3xl font-semibold text-navy-900">Why insurance</h2>
+        <p>
+          Shawn spent 28 years as a Las Vegas business owner, operating multiple
+          properties and building thousands of five-star client relationships. Over
+          those years he watched hard-working people get blindsided — a back injury
+          that stopped the paychecks, a diagnosis that drained the savings, a
+          hospital bill that a "good" health plan barely touched.
+        </p>
+        <p>
+          He moved into insurance because voluntary benefits are the quiet fix for
+          those moments. Done right, a few affordable policies mean a setback stays
+          a setback instead of becoming a financial catastrophe. Shawn's role is to
+          get the "done right" part correct — for your situation, not a template.
+        </p>
+        <p>
+          He works with individuals, families, and small businesses across Las
+          Vegas and, through Colonial Life, nationwide.
+        </p>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="rounded-2xl border border-navy-100 bg-navy-50 p-6">
+          <h3 class="font-serif text-lg font-semibold text-navy-900">At a glance</h3>
+          <dl class="mt-4 space-y-3 text-sm">
+            <div class="flex justify-between gap-4">
+              <dt class="text-navy-500">Based in</dt>
+              <dd class="font-medium text-navy-900">Las Vegas, Nevada</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-navy-500">Represents</dt>
+              <dd class="font-medium text-navy-900">Colonial Life</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-navy-500">Experience</dt>
+              <dd class="font-medium text-navy-900">28+ years in business</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-navy-500">Serves</dt>
+              <dd class="font-medium text-navy-900">Individuals, families, small business</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-navy-500">Email</dt>
+              <dd class="font-medium text-navy-900">
+                <a href="mailto:shawn@investlifetoday.com" class="hover:text-navy-600">shawn@investlifetoday.com</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <img
+          src="/images/shawn-absher-office.avif"
+          alt="Shawn Absher"
+          width="1000"
+          height="936"
+          class="w-full rounded-2xl border border-navy-100 object-cover shadow-lg"
+        />
+      </aside>
+    </div>
+  </section>
+
+  <section class="bg-navy-50 py-20">
+    <div class="container-x">
+      <h2 class="font-serif text-3xl font-semibold text-navy-900">How Shawn works</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {
+          values.map((v) => (
+            <div class="rounded-2xl border border-navy-100 bg-white p-6">
+              <h3 class="font-serif text-lg font-semibold text-navy-900">{v.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-navy-600">{v.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="py-20">
+    <CtaBand
+      heading="Talk to Shawn directly"
+      body="No phone tree, no hand-off. When you reach out, you get Shawn — usually within a day."
+    />
+  </div>
+</Layout>

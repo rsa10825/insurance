@@ -1,0 +1,57 @@
+---
+const { pathname } = Astro.url;
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname.startsWith(href);
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/coverage', label: 'Coverage' },
+  { href: '/about', label: 'About Shawn' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-navy-100 bg-white/90 backdrop-blur">
+  <nav class="container-x flex h-16 items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2.5 font-serif text-lg font-semibold text-navy-900">
+      <span class="grid h-9 w-9 place-items-center rounded-md bg-navy-800 text-white">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3l8 4v5c0 4.4-3.1 7.6-8 9-4.9-1.4-8-4.6-8-9V7z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+      </span>
+      <span>Shawn Absher <span class="text-navy-500">Insurance</span></span>
+    </a>
+
+    <div class="hidden items-center gap-1 md:flex">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class:list={[
+              'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+              isActive(l.href)
+                ? 'text-navy-900'
+                : 'text-navy-500 hover:text-navy-900',
+            ]}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+      <a
+        href="/contact"
+        class="ml-2 rounded-md bg-navy-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
+      >
+        Get a Free Review
+      </a>
+    </div>
+
+    <a
+      href="/contact"
+      class="rounded-md bg-navy-800 px-3.5 py-2 text-sm font-semibold text-white md:hidden"
+    >
+      Free Review
+    </a>
+  </nav>
+</header>

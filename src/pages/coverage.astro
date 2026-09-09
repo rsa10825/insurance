@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { products } from '../data/products';
+---
+
+<Layout
+  title="Colonial Life Coverage — Disability, Life, Accident & More | Shawn Absher"
+  description="A plain-English guide to Colonial Life voluntary insurance: disability, life, accident, critical illness, cancer, hospital indemnity, and dental & vision. Reviewed with Shawn Absher."
+>
+  <section class="bg-navy-950">
+    <div class="container-x py-16 lg:py-20">
+      <p class="text-xs font-medium uppercase tracking-wide text-navy-300">Coverage</p>
+      <h1 class="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
+        Every Colonial Life product, in plain English
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-navy-200">
+        Colonial Life specializes in voluntary benefits — coverage that pays cash
+        directly to you to fill the gaps left by major medical, disability, and
+        employer plans. Here is what each one does and who it is built for.
+      </p>
+      <nav class="mt-8 flex flex-wrap gap-2">
+        {
+          products.map((p) => (
+            <a
+              href={`#${p.slug}`}
+              class="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm text-navy-100 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              {p.name.replace(' Insurance', '')}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </section>
+
+  <div class="container-x divide-y divide-navy-100">
+    {
+      products.map((p, i) => (
+        <article id={p.slug} class="scroll-mt-24 py-16">
+          <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <span class="grid h-12 w-12 place-items-center rounded-xl bg-navy-800 text-white">
+                <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={p.icon} />
+                </svg>
+              </span>
+              <h2 class="mt-5 font-serif text-2xl font-semibold text-navy-900 sm:text-3xl">{p.name}</h2>
+              <p class="mt-2 font-medium text-gold-600">{p.tagline}</p>
+              <p class="mt-4 text-navy-600">{p.summary}</p>
+              <a
+                href="/contact"
+                class="mt-6 inline-flex items-center gap-1.5 rounded-md bg-navy-800 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
+              >
+                Ask Shawn about {p.name.replace(' Insurance', '')}
+              </a>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div class="rounded-2xl border border-navy-100 bg-navy-50 p-6 sm:col-span-2">
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-navy-500">What it covers</h3>
+                <ul class="mt-3 space-y-2">
+                  {p.covers.map((c) => (
+                    <li class="flex gap-2.5 text-sm text-navy-700">
+                      <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-navy-100 p-6">
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-navy-500">How it works</h3>
+                <p class="mt-3 text-sm leading-relaxed text-navy-700">{p.howItWorks}</p>
+              </div>
+              <div class="rounded-2xl border border-navy-100 p-6">
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-navy-500">Best for</h3>
+                <p class="mt-3 text-sm leading-relaxed text-navy-700">{p.bestFor}</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <div class="py-16">
+    <CtaBand
+      heading="Ready to see what fits?"
+      body="Shawn will map these products against the coverage you already have and show you exactly where the gaps are — for free."
+    />
+  </div>
+</Layout>

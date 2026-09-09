@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { products } from '../data/products';
+
+// To make this form deliver email, create a free endpoint at https://formspree.io
+// (or https://web3forms.com) and replace the ID below.
+const FORMSPREE_ID = 'your-form-id';
+const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
+---
+
+<Layout
+  title="Contact Shawn Absher — Free Colonial Life Benefits Review"
+  description="Reach Shawn Absher for a free, no-pressure Colonial Life benefits review. Email shawn@investlifetoday.com or send a message and hear back within 24 hours."
+>
+  <section class="bg-navy-950">
+    <div class="container-x py-16 lg:py-20">
+      <p class="text-xs font-medium uppercase tracking-wide text-navy-300">Contact</p>
+      <h1 class="mt-4 max-w-2xl font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
+        Let's find the gaps in your coverage
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-navy-200">
+        Send a note below or email Shawn directly. Every review is free, and there
+        is never any pressure to buy.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-x py-16">
+    <div class="grid gap-12 lg:grid-cols-[1fr_0.8fr]">
+      <!-- Form -->
+      <div>
+        <form
+          action={formAction}
+          method="POST"
+          class="grid gap-5 rounded-2xl border border-navy-100 bg-white p-6 sm:p-8"
+        >
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="block">
+              <span class="text-sm font-medium text-navy-800">Name</span>
+              <input
+                type="text"
+                name="name"
+                required
+                autocomplete="name"
+                class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
+              />
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-navy-800">Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
+              />
+            </label>
+          </div>
+
+          <label class="block">
+            <span class="text-sm font-medium text-navy-800">Phone <span class="text-navy-400">(optional)</span></span>
+            <input
+              type="tel"
+              name="phone"
+              autocomplete="tel"
+              class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
+            />
+          </label>
+
+          <label class="block">
+            <span class="text-sm font-medium text-navy-800">What are you most interested in?</span>
+            <select
+              name="interest"
+              class="mt-1.5 w-full rounded-md border border-navy-200 bg-white px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
+            >
+              <option value="">Not sure yet — help me figure it out</option>
+              {products.map((p) => <option value={p.name}>{p.name}</option>)}
+              <option value="Small business benefits">Small business benefits</option>
+            </select>
+          </label>
+
+          <label class="block">
+            <span class="text-sm font-medium text-navy-800">Message</span>
+            <textarea
+              name="message"
+              rows="5"
+              required
+              class="mt-1.5 w-full rounded-md border border-navy-200 px-3 py-2.5 text-sm text-navy-900 outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
+              placeholder="Tell Shawn a little about your situation and the best time to reach you."
+            ></textarea>
+          </label>
+
+          <input type="hidden" name="_subject" value="New benefits review request — investlifetoday.com" />
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <button
+            type="submit"
+            class="justify-self-start rounded-md bg-navy-800 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
+          >
+            Send to Shawn
+          </button>
+          <p class="text-xs text-navy-400">
+            By sending this you agree to be contacted about insurance options. Your
+            information is never sold.
+          </p>
+        </form>
+      </div>
+
+      <!-- Direct details -->
+      <aside class="space-y-6">
+        <div class="rounded-2xl border border-navy-100 bg-navy-50 p-6">
+          <h2 class="font-serif text-lg font-semibold text-navy-900">Reach Shawn directly</h2>
+          <ul class="mt-4 space-y-4 text-sm">
+            <li class="flex gap-3">
+              <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
+              <div>
+                <p class="font-medium text-navy-900">Email</p>
+                <a href="mailto:shawn@investlifetoday.com" class="text-navy-600 hover:text-navy-800">shawn@investlifetoday.com</a>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+              <div>
+                <p class="font-medium text-navy-900">Location</p>
+                <p class="text-navy-600">Las Vegas, Nevada — serving clients nationwide</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+              <div>
+                <p class="font-medium text-navy-900">Response time</p>
+                <p class="text-navy-600">Within 24 hours, Monday–Saturday</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl border border-navy-100">
+          <img
+            src="/images/shawn-absher-office.avif"
+            alt="Shawn Absher"
+            width="1000"
+            height="936"
+            class="aspect-[4/3] w-full object-cover object-top"
+          />
+          <div class="p-5">
+            <p class="font-semibold text-navy-900">Shawn Absher</p>
+            <p class="text-sm text-navy-500">Independent Colonial Life Benefits Counselor</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>
