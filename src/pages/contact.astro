@@ -1,23 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { products } from '../data/products';
 
 const email = 'shawn@investlifetoday.com';
+
+const mentions = [
+  'Company name and headcount',
+  'Your industry',
+  'Benefits you offer employees today',
+  'Employee-paid, employer-sponsored, or shared cost',
+  'Whether you have an open-enrollment date',
+  'Not sure yet — that’s fine',
+];
 ---
 
 <Layout
-  title="Contact Shawn Absher — Free Colonial Life Benefits Review"
-  description="Reach Shawn Absher directly for a free, no-pressure Colonial Life benefits review. Email shawn@investlifetoday.com and hear back within 24 hours."
+  title="Contact Shawn Absher — Free Benefits Review for Your Company"
+  description="Reach Shawn Absher directly for a free, no-pressure review of your company's benefits package. Email shawn@investlifetoday.com and hear back within 24 hours."
 >
   <section class="bg-navy-950">
     <div class="container-x py-16 lg:py-20">
       <p class="text-xs font-medium uppercase tracking-wide text-navy-300">Contact</p>
       <h1 class="mt-4 max-w-2xl font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
-        Let's find the gaps in your coverage
+        Let's find the gaps in your benefits
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-navy-200">
-        Email Shawn directly. Every review is free, and there is never any pressure
-        to buy.
+        Email Shawn about your company. Every review is free, and there is never
+        any pressure to move forward.
       </p>
     </div>
   </section>
@@ -29,13 +37,13 @@ const email = 'shawn@investlifetoday.com';
         <div class="rounded-2xl border border-navy-100 bg-navy-50 p-8 sm:p-10">
           <h2 class="font-serif text-2xl font-semibold text-navy-900">Email Shawn</h2>
           <p class="mt-3 text-navy-600">
-            Send a few lines about your situation — your job, your family, the
-            coverage you already have — and the best time to reach you. Shawn
-            replies personally, usually within a day.
+            Send a few lines about your company — headcount, industry, and the
+            benefits you offer today — and a good time to talk. Shawn replies
+            personally, usually within a day.
           </p>
 
           <a
-            href={`mailto:${email}?subject=${encodeURIComponent('Benefits review request')}`}
+            href={`mailto:${email}?subject=${encodeURIComponent('Benefits review for our company')}`}
             class="mt-6 inline-flex items-center gap-2 rounded-md bg-navy-800 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
           >
             <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
@@ -53,21 +61,13 @@ const email = 'shawn@investlifetoday.com';
           </h3>
           <ul class="mt-4 grid gap-2 sm:grid-cols-2">
             {
-              products.map((p) => (
+              mentions.map((m) => (
                 <li class="flex gap-2 text-sm text-navy-700">
                   <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-                  {p.name.replace(' Insurance', '')}
+                  {m}
                 </li>
               ))
             }
-            <li class="flex gap-2 text-sm text-navy-700">
-              <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-              Small business benefits
-            </li>
-            <li class="flex gap-2 text-sm text-navy-700">
-              <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
-              Not sure yet — that's fine
-            </li>
           </ul>
         </div>
       </div>
@@ -88,7 +88,7 @@ const email = 'shawn@investlifetoday.com';
               <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
               <div>
                 <p class="font-medium text-navy-900">Location</p>
-                <p class="text-navy-600">Las Vegas, Nevada — serving clients nationwide</p>
+                <p class="text-navy-600">Las Vegas, Nevada — serving employers nationwide</p>
               </div>
             </li>
             <li class="flex gap-3">
@@ -111,7 +111,7 @@ const email = 'shawn@investlifetoday.com';
           />
           <div class="p-5">
             <p class="font-semibold text-navy-900">Shawn Absher</p>
-            <p class="text-sm text-navy-500">Independent Colonial Life Benefits Counselor</p>
+            <p class="text-sm text-navy-500">Independent Colonial Life Benefits Broker</p>
           </div>
         </div>
       </aside>

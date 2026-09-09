@@ -6,31 +6,31 @@ import { products } from '../data/products';
 const steps = [
   {
     n: '01',
-    title: 'Free consultation',
-    body: 'We talk through your family, your job, your existing coverage, and where a gap would hurt most. No cost, no obligation.',
+    title: 'Benefits review',
+    body: 'Shawn looks at the coverage you offer today, your headcount, and where your team has gaps. No cost, no obligation.',
   },
   {
     n: '02',
-    title: 'A plan built for you',
-    body: 'Shawn recommends the Colonial Life products that fit — and just as often tells you what you do not need.',
+    title: 'Plan design',
+    body: 'He recommends which Colonial Life products to add and how they are funded — employee-paid, employer-sponsored, or shared cost.',
   },
   {
     n: '03',
-    title: 'Enroll in minutes',
-    body: 'Simple applications, payroll deduction where available, and coverage that starts fast.',
+    title: 'Enrollment, handled',
+    body: 'Shawn runs employee education and sign-ups on-site or virtually, so it never lands on your HR team.',
   },
   {
     n: '04',
-    title: 'Support at claim time',
-    body: 'When something happens, Shawn helps you file and follow up so benefits get paid quickly.',
+    title: 'Ongoing service',
+    body: 'New-hire enrollment, claims help for your employees, and an annual check-in to keep the plan right.',
   },
 ];
 
 const stats = [
-  { value: '28+', label: 'Years serving Las Vegas' },
+  { value: '28+', label: 'Years in Las Vegas business' },
   { value: '7', label: 'Colonial Life product lines' },
-  { value: '24 hrs', label: 'Typical response time' },
-  { value: '$0', label: 'Cost for a benefits review' },
+  { value: '$0', label: 'Typical cost to the employer' },
+  { value: '1-to-1', label: 'Counseling for every employee' },
 ];
 ---
 
@@ -41,15 +41,16 @@ const stats = [
     <div class="container-x relative grid items-center gap-12 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
       <div>
         <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-wide text-navy-100">
-          Independent Colonial Life Agent
+          Independent Colonial Life Benefits Broker
         </p>
         <h1 class="mt-6 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-          Shawn Absher is the expert for all of your insurance needs.
+          Shawn Absher is the expert for your team's benefits.
         </h1>
         <p class="mt-6 max-w-xl text-lg leading-relaxed text-navy-200">
-          Disability, life, accident, critical illness, cancer, hospital indemnity,
-          and dental &amp; vision coverage from Colonial Life — explained in plain
-          English and matched to your life and budget.
+          Shawn shows Las Vegas businesses how to give employees stronger coverage —
+          disability, life, accident, critical illness, cancer, hospital indemnity,
+          and dental &amp; vision from Colonial Life. Often at no direct cost to the
+          company, through payroll deduction.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
@@ -62,11 +63,12 @@ const stats = [
             href="/coverage"
             class="rounded-md border border-white/25 px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-white/10"
           >
-            Explore Coverage
+            See the Coverage
           </a>
         </div>
         <p class="mt-6 text-sm text-navy-300">
-          Serving families &amp; small businesses in Las Vegas and nationwide.
+          For employers in Las Vegas and nationwide — from 5-person offices to
+          companies with hundreds on payroll.
         </p>
       </div>
 
@@ -74,14 +76,14 @@ const stats = [
         <div class="absolute -inset-4 rounded-3xl bg-gold-400/10 blur-2xl"></div>
         <img
           src="/images/shawn-absher-hero.avif"
-          alt="Shawn Absher, independent Colonial Life insurance agent"
+          alt="Shawn Absher, independent Colonial Life benefits broker"
           width="1000"
           height="1000"
           class="relative aspect-square w-full rounded-3xl border border-white/10 object-cover object-top shadow-2xl"
         />
         <div class="relative mx-4 -mt-8 rounded-xl border border-navy-100 bg-white p-4 shadow-lg">
           <p class="text-sm font-semibold text-navy-900">Shawn Absher</p>
-          <p class="text-xs text-navy-500">Benefits Counselor · shawn@investlifetoday.com</p>
+          <p class="text-xs text-navy-500">Benefits Broker · shawn@investlifetoday.com</p>
         </div>
       </div>
     </div>
@@ -115,21 +117,22 @@ const stats = [
       </div>
       <div>
         <h2 class="font-serif text-3xl font-semibold text-navy-900 sm:text-4xl">
-          One person who actually knows your coverage
+          Better benefits, without a bigger benefits budget
         </h2>
         <p class="mt-5 text-lg leading-relaxed text-navy-600">
-          Most people find out what their insurance does — and doesn't — cover on
-          the worst day of their life. Shawn's job is to make sure that never
-          happens to you. He walks you through every option, answers the awkward
-          questions, and builds a plan you understand.
+          Health premiums keep climbing, deductibles keep growing, and good people
+          are hard to keep. Voluntary benefits are the lever most employers are not
+          pulling: coverage employees choose and pay for through payroll deduction,
+          bolted onto the plan you already run. Shawn designs it, enrolls it, and
+          services it.
         </p>
         <ul class="mt-8 space-y-4">
           {
             [
-              'Independent counsel — Shawn works for you, not a call center.',
-              'Plain-English explanations of what each policy pays and when.',
-              'Honest guidance, including what to skip.',
-              'A real person to call when it is time to file a claim.',
+              'Strengthen your package without raising company costs.',
+              'Employee-paid, employer-sponsored, or shared cost — you decide.',
+              'Shawn runs enrollment on-site or virtually, so HR is not stuck doing it.',
+              'One point of contact for plan design, enrollment, and employee claims.',
             ].map((point) => (
               <li class="flex gap-3">
                 <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 flex-none text-gold-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -153,11 +156,12 @@ const stats = [
     <div class="container-x">
       <div class="max-w-2xl">
         <h2 class="font-serif text-3xl font-semibold text-navy-900 sm:text-4xl">
-          Colonial Life coverage, explained
+          Benefits you can add to your plan
         </h2>
         <p class="mt-4 text-lg text-navy-600">
-          Seven types of voluntary protection that fill the gaps your major
-          medical and employer plans leave behind.
+          Seven Colonial Life voluntary products that fill the gaps major medical
+          leaves behind. Employees enroll and pay through payroll deduction, so
+          there is often no direct cost to the business.
         </p>
       </div>
 
@@ -190,8 +194,8 @@ const stats = [
   <!-- How it works -->
   <section class="container-x py-20">
     <div class="max-w-2xl">
-      <h2 class="font-serif text-3xl font-semibold text-navy-900 sm:text-4xl">How working with Shawn goes</h2>
-      <p class="mt-4 text-lg text-navy-600">Four steps, no pressure, no jargon.</p>
+      <h2 class="font-serif text-3xl font-semibold text-navy-900 sm:text-4xl">How Shawn works with your company</h2>
+      <p class="mt-4 text-lg text-navy-600">Four steps, minimal lift for your team.</p>
     </div>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {
@@ -209,27 +213,27 @@ const stats = [
   <!-- Testimonials -->
   <section class="bg-navy-50 py-20">
     <div class="container-x">
-      <h2 class="font-serif text-3xl font-semibold text-navy-900 sm:text-4xl">What clients say</h2>
+      <h2 class="font-serif text-3xl font-semibold text-navy-900 sm:text-4xl">What employers say</h2>
       <div class="mt-12 grid gap-6 md:grid-cols-3">
         {
           [
             {
               quote:
-                'Shawn found a gap in my disability coverage I had no idea existed. When I hurt my back, the checks showed up exactly like he said they would.',
-              name: 'Marcus T.',
-              role: 'Contractor, Henderson',
+                'We added accident and disability coverage at zero cost to the company. Our crew finally feels like we have their backs.',
+              name: 'HR Director',
+              role: '40-person contractor, Henderson',
             },
             {
               quote:
-                'He sat with my whole family and explained everything without the sales pitch. We finally feel covered instead of just hoping.',
-              name: 'Danielle R.',
-              role: 'Small business owner, Las Vegas',
+                'Open enrollment used to eat a week of my time. Shawn ran the whole thing and employee participation more than doubled.',
+              name: 'Office Manager',
+              role: 'Dental group, Las Vegas',
             },
             {
               quote:
-                'The critical illness policy paid a lump sum within weeks of my diagnosis. Shawn handled the paperwork with me start to finish.',
-              name: 'James P.',
-              role: 'Retired teacher',
+                'Shawn actually explained the benefits to each person. My team understands what they signed up for, and they use it.',
+              name: 'Owner',
+              role: 'Logistics company, North Las Vegas',
             },
           ].map((t) => (
             <figure class="flex flex-col rounded-2xl border border-navy-100 bg-white p-6">
@@ -248,8 +252,8 @@ const stats = [
         }
       </div>
       <p class="mt-6 text-xs text-navy-400">
-        Client experiences shown for illustration. Individual results and benefit
-        payments depend on the policy purchased and its terms.
+        Illustrative examples. Enrollment results, costs, and benefit payments
+        depend on the plan selected and its terms.
       </p>
     </div>
   </section>

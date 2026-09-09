@@ -1,8 +1,11 @@
 # Shawn Absher Insurance
 
-Marketing site for **Shawn Absher**, an independent Colonial Life benefits
-counselor serving Las Vegas and nationwide. Built with [Astro](https://astro.build)
-and [Tailwind CSS](https://tailwindcss.com).
+Marketing site for **Shawn Absher**, an independent Colonial Life benefits broker
+who works with **employers** — showing Las Vegas businesses how to give employees
+stronger voluntary coverage (disability, life, accident, critical illness, cancer,
+hospital indemnity, dental & vision), usually paid by employees through payroll
+deduction at no direct cost to the company. Built with
+[Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
 
 **Live domain:** https://investlifetoday.com
 **Contact:** shawn@investlifetoday.com
@@ -11,10 +14,10 @@ and [Tailwind CSS](https://tailwindcss.com).
 
 | Route        | Purpose                                                             |
 | ------------ | ------------------------------------------------------------------- |
-| `/`          | Hero, trust stats, why Shawn, coverage grid, process, testimonials |
-| `/coverage`  | Plain-English guide to all seven Colonial Life product lines        |
+| `/`          | Hero, trust stats, "better benefits" pitch, product grid, process, employer testimonials |
+| `/coverage`  | How funding works (employee-paid / employer-sponsored / shared) + all seven product lines |
 | `/about`     | Shawn's background and approach                                     |
-| `/contact`   | Contact form + direct details                                       |
+| `/contact`   | Email-only contact + what to include about your company            |
 
 Coverage content is data-driven from [`src/data/products.ts`](src/data/products.ts) —
 edit that one file to change product copy everywhere it appears.

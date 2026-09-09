@@ -5,19 +5,20 @@ import { products } from '../data/products';
 ---
 
 <Layout
-  title="Colonial Life Coverage — Disability, Life, Accident & More | Shawn Absher"
-  description="A plain-English guide to Colonial Life voluntary insurance: disability, life, accident, critical illness, cancer, hospital indemnity, and dental & vision. Reviewed with Shawn Absher."
+  title="Colonial Life Voluntary Benefits for Employers | Shawn Absher"
+  description="A plain-English guide to the Colonial Life voluntary benefits you can offer your employees: disability, life, accident, critical illness, cancer, hospital indemnity, and dental & vision — usually at no direct cost to the company."
 >
   <section class="bg-navy-950">
     <div class="container-x py-16 lg:py-20">
       <p class="text-xs font-medium uppercase tracking-wide text-navy-300">Coverage</p>
       <h1 class="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl">
-        Every Colonial Life product, in plain English
+        Voluntary benefits you can offer your team
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-navy-200">
         Colonial Life specializes in voluntary benefits — coverage that pays cash
-        directly to you to fill the gaps left by major medical, disability, and
-        employer plans. Here is what each one does and who it is built for.
+        directly to the employee to fill the gaps left by major medical and group
+        plans. Employees choose what they want and pay through payroll deduction.
+        Here is what each product does and which teams it fits.
       </p>
       <nav class="mt-8 flex flex-wrap gap-2">
         {
@@ -31,6 +32,43 @@ import { products } from '../data/products';
           ))
         }
       </nav>
+    </div>
+  </section>
+
+  <section class="border-b border-navy-100 bg-navy-50">
+    <div class="container-x py-14">
+      <h2 class="font-serif text-2xl font-semibold text-navy-900 sm:text-3xl">How funding works</h2>
+      <p class="mt-3 max-w-2xl text-navy-600">
+        You choose how each benefit is paid for. Most employers start with
+        employee-paid and add company contributions over time.
+      </p>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {
+          [
+            {
+              title: 'Employee-paid',
+              body: 'Employees who want the coverage pay 100% through payroll deduction. No premium cost to the company — just a stronger benefits package.',
+            },
+            {
+              title: 'Employer-sponsored',
+              body: 'The company pays all or part of the premium for a core benefit — often a base life or disability amount — as a recruiting and retention tool.',
+            },
+            {
+              title: 'Shared cost',
+              body: 'The company funds a set dollar amount or percentage and employees buy up from there. A middle ground that keeps the budget predictable.',
+            },
+          ].map((f) => (
+            <div class="rounded-2xl border border-navy-100 bg-white p-6">
+              <h3 class="font-serif text-lg font-semibold text-navy-900">{f.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-navy-600">{f.body}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-6 text-sm text-navy-500">
+        In every case, Shawn handles enrollment and employee questions — and
+        premiums are set up on payroll deduction so administration stays light.
+      </p>
     </div>
   </section>
 
@@ -52,7 +90,7 @@ import { products } from '../data/products';
                 href="/contact"
                 class="mt-6 inline-flex items-center gap-1.5 rounded-md bg-navy-800 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
               >
-                Ask Shawn about {p.name.replace(' Insurance', '')}
+                Add {p.name.replace(' Insurance', '')} to your plan
               </a>
             </div>
 
@@ -85,8 +123,8 @@ import { products } from '../data/products';
 
   <div class="py-16">
     <CtaBand
-      heading="Ready to see what fits?"
-      body="Shawn will map these products against the coverage you already have and show you exactly where the gaps are — for free."
+      heading="Ready to see what fits your team?"
+      body="Shawn will map these products against the coverage you offer today and show you where the gaps are — plus a plan to close them at no direct cost to the company."
     />
   </div>
 </Layout>

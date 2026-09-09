@@ -4,8 +4,8 @@ interface Props {
   body?: string;
 }
 const {
-  heading = 'Not sure which coverage you need?',
-  body = 'That is exactly what Shawn is for. Book a free 20-minute review and get a clear, no-pressure recommendation built around your family and budget.',
+  heading = 'Not sure where your benefits fall short?',
+  body = 'That is exactly what Shawn is for. Book a free 20-minute review and get a clear, no-pressure read on your current package and what voluntary coverage would add for your team.',
 } = Astro.props;
 ---
 
@@ -18,10 +18,10 @@ const {
       <p class="mt-4 text-navy-200">{body}</p>
       <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
-          href="mailto:shawn@investlifetoday.com?subject=Benefits%20review%20request"
+          href="mailto:shawn@investlifetoday.com?subject=Benefits%20review%20for%20our%20company"
           class="w-full rounded-md bg-gold-400 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-500 sm:w-auto"
         >
-          Email Shawn for a Free Review
+          Email Shawn About Your Team
         </a>
         <a
           href="/contact"
